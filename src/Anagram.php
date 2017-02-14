@@ -2,12 +2,7 @@
 
 class Anagram
 {
-  function makeAnagram($input1, $input2)
-  {
-      if (strlen($input1) == strlen($input2)) {
-          return true;
-      }
-  }
+
   function compareWords($input1, $input2)
   {
       $splitword1 = str_split($input1);
@@ -24,10 +19,21 @@ class Anagram
       $split_words = array();
       foreach ($explode_strings as $word) {
           array_push($split_words, str_split($word));
+
           if (strlen($input1) == strlen($word)) {
-              return true;
+              return "this ". $word ." is an anagram.";
+          } else {
+              return "This " . $word . " is not an anagram.";
           }
       }
+    //   foreach ($split_words as $word) {
+    //       $splitword1= str_split($input1);
+    //       $wordorder1= sort($splitword1);
+    //       $wordorder2 = sort($word);
+    //       if ($wordorder1==$wordorder2) {
+    //           return true;
+    //       }
+    //   }
 
   }
 }
